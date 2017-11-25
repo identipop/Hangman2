@@ -1,25 +1,18 @@
 // no
-var letter = require ("./letter.js");
+var LetterConstructor = require ("./letter.js");
+var game = require ("./game.js");
 
 function WordBuilder (word){
-    // constructor for blanks and words
-    // takes words in array and makes blanks for letters
-    // uses letter constructor to show letter/blank
+
     this.word = word;
-    this.wordspaces = word.length;
-    this.letterarray= word.split("");
-    this.blankarray = [];
-    this.blankstring = "";
-    this.blanks = function (wordletters){
-        for (var i =0; i<(this.letterarray).length; i++){
-            this.blankstring.concat("_ ");
-            
-            
-        }
-    
-    };
-    
+    this.lettersInWord = function(word){
+      this.letterarray = word.split("");
+      this.letterobjects = [];
+      for (var i = 0; i<this.letterarray.length; i++){
+        this.letterobjects.push(new LetterConstructor(this.letterarray[i]));
+      }
+    }
+
 }
-var banana = new WordBuilder("banana");
-banana.blanks("banana");
-console.log (banana.blankstring);
+
+module.exports = WordBuilder;
