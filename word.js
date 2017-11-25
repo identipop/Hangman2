@@ -11,7 +11,7 @@ function WordBuilder (word){
       for (var i = 0; i<this.letterarray.length; i++){
         this.letterobjects.push(new LetterConstructor(this.letterarray[i]));
       }
-    }
+    };
 
 }
 
