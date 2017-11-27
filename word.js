@@ -33,7 +33,7 @@ function WordBuilder(word) {
   };
 
   // Method to create letter objects in LetterConstructor
-  this.lettersInWord = function(word) {
+  this.lettersInWord = function() {
     for (var i = 0; i < this.letterarray.length; i++) {
       this.letterobjects.push(new LetterConstructor(this.letterarray[i]));
     }
